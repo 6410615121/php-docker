@@ -137,3 +137,25 @@ function search_name($search_text){
     // $result = mysqli_stmt_get_result($stmt);
     // $persons = mysqli_fetch_all($result, MYSQLI_ASSOC);
     // mysqli_stmt_close($stmt);
+
+function create_user($username, $password, $email)
+{
+   global $link;
+   $query = "INSERT INTO users (username, password, email) VALUES('$username', '$password', '$email')";
+   $result = mysqli_query($link, $query);
+
+   if (!$result) {
+       die("Query failed: " . mysqli_error($link));
+   }
+   return $result; // Return true or False
+}
+
+function login($username, $password){
+    global $link;
+    $query = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
+    $result = mysqli_query($link, $query);
+
+    return $result;
+}
+
+
