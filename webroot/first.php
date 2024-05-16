@@ -9,6 +9,11 @@
 </head>
 <body>
 <!-- HTML Comment -->
+<?= 'test<br>' ?>
+
+<?= "<script>alert('hey')</script>" ?>
+
+
 <?php if(True): ?>
 Hello!<br>
 <?php else: ?>
