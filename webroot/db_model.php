@@ -161,9 +161,9 @@ function login($username, $password){
     }
 }
 
-function addComment($comment){
+function addComment($comment,$user){
     global $link;
-    $query = "INSERT INTO comments (comment) VALUES('$comment')";
+    $query = "INSERT INTO comments (comment,user) VALUES('$comment','$user')";
     $result = mysqli_query($link, $query);
 
     if (!$result) {
