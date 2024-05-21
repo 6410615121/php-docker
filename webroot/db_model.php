@@ -154,8 +154,71 @@ function login($username, $password){
     global $link;
     $query = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
     $result = mysqli_query($link, $query);
+    if (mysqli_num_rows($result) != 0) {
+        return true; // Login successful
+    } else {
+        return false; // Login unsuccessful
+    }
+}
 
-    return $result;
+function addComment($comment){
+    global $link;
+    $query = "INSERT INTO comments (comment) VALUES('$comment')";
+    $result = mysqli_query($link, $query);
+
+    if (!$result) {
+        die("Query failed: " . mysqli_error($link));
+    }
+    return $result; // Return true or False
+}
+
+function getComments(){
+    global $link;
+    $query = "SELECT * FROM comments";
+    $result = mysqli_query($link, $query);
+
+    if (!$result) {
+        die("Query failed: " . mysqli_error($link));
+    }
+
+    $comments = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    return $comments;
+}
+
+function delete_all_comments(){
+    global $link;
+    $query = "DELETE FROM comments";
+    $result = mysqli_query($link, $query);
+
+    if (!$result) {
+        die("Query failed: " . mysqli_error($link));
+    }
+    return $result; // Return true or False
+}
+
+function get_user($username){
+    global $link;
+    $query = "SELECT * FROM users WHERE username='$username'";
+    $result = mysqli_query($link, $query);
+
+    if (!$result) {
+        die("Query failed: " . mysqli_error($link));
+    }
+
+    $user = mysqli_fetch_assoc($result);
+    return $user; // Return true or False
+}
+
+function update_email($username, $new_email){
+    global $link;
+    $query = "UPDATE users set email = '$new_email' WHERE username = '$username'";
+    $result = mysqli_query($link, $query);
+
+    if (!$result) {
+        die("Query failed: " . mysqli_error($link));
+    }
+
+    return $result; // Return true or False
 }
 
 
