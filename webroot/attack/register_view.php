@@ -25,7 +25,7 @@
         <h2>Register</h2>
       </div>
       <div class="card-body" >
-        <form method="post">
+        <form method="get">
           <label for="username">Username</label>
           <input type="text" class="form-control" name="username" id="username" required><br>
 
@@ -37,6 +37,8 @@
 
           <label for="email">Email</label>
           <input type="text" class="form-control" name="email" id="email" required><br>
+
+          <input type="hidden" name="register" value="1">
 
           <input type="submit" class="btn btn-primary">
         </form>
