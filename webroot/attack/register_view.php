@@ -12,7 +12,7 @@
     <!-- style -->
     <style>
       body {
-        height: 80dvh;
+        height: 100dvh;
       }
     </style>
 
@@ -21,23 +21,24 @@
 
 <div class="d-flex justify-content-center align-items-center flex-grow-1 h-100" >
     <div class="card" style="width: 25rem;">
-      <h2>Register</h2>
+      <div class="card-header">
+        <h2>Register</h2>
+      </div>
       <div class="card-body" >
-        <form method="get">
+        <form method="post">
           <label for="username">Username</label>
           <input type="text" class="form-control" name="username" id="username" required><br>
 
-          <label for="password">password</label>
-          <input type="text" class="form-control" name="password" id="password" required><br>
+          <label for="password">Password</label>
+          <input type="text" class="form-control " name="password" id="password" required><br>
 
-          <label for="password_confirm">password confirm</label>
+          <label for="password_confirm">Password Confirm</label>
           <input type="text" class="form-control" name="password_confirm" id="password_confirm" required><br>
 
-          <label for="email">email</label>
+          <label for="email">Email</label>
           <input type="text" class="form-control" name="email" id="email" required><br>
-          
-          <a href="./login.php" >Login</a><br>
-          <input type="submit">
+
+          <input type="submit" class="btn btn-primary">
         </form>
       </div>
     </div>
