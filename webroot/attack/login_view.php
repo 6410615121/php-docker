@@ -11,7 +11,7 @@
   <!-- style -->
   <style>
      body {
-      height: 50dvh;
+      height: 100dvh;
     }
   </style>
 </head>
@@ -19,8 +19,11 @@
 
   <div class="d-flex justify-content-center align-items-center flex-grow-1 h-100" >
     <div class="card" style="width: 25rem;">
-      <h2>Login</h2>
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
       <div class="card-body" >
+        
         <form method="get">
           
           <label for="username">Username</label>
@@ -31,7 +34,7 @@
           
           <a href="./register.php" >Register</a><br>
 
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary mt-3">Login</button>
         </form>
       </div>
     </div>
