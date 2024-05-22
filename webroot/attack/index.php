@@ -2,11 +2,10 @@
     require_once('../db_model.php');
 
     if(isset($_COOKIE['username'])){
-        $comments = getComments();
-
         if(isset($_POST['add_comment']) and isset($_POST['comment'])){
             addComment($_POST['comment'],$_COOKIE['username']);
         }
+        $comments = getComments();
     }
     require_once('index_view.php')
 ?>

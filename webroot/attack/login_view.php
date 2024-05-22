@@ -20,7 +20,7 @@
   <div class="d-flex justify-content-center align-items-center flex-grow-1 h-100" >
     <div class="card" style="width: 25rem;">
       <div class="card-header">
-        <h2>Login</h2>
+        <h3>Login</h3>
       </div>
       <div class="card-body" >
         

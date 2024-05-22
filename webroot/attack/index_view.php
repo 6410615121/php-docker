@@ -12,22 +12,30 @@
 </head>
 <body>
     <?php include_once('./navbar.php'); ?>
-    <div class="d-flex flex-column align-items-center">
-        <h2>Hello welcome you are  <?=($_COOKIE["username"]) ?>!!</h2>
+    <div class="d-flex flex-column align-items-center mt-5">
+        <h2>Hello, Welcome  <?=($_COOKIE["username"]) ?>!!</h2>
     
-        <div>
-            <h2>comment box</h2>
-            <form action="" method="post">
-                <input type="textarea" placeholder="comment something" name="comment">
+        <div class="mt-3">
+            <form action="" method="post" class="form ">
+                <table class="table ">
+                    <tr class="align-middle">
+                        <th><label for="comment" class="form-label me-1">Comment</label></th>
+                        <td><input type="textarea" placeholder="comment something" id="comment" name="comment" class="form-control"></td>
+                        <td><input type="submit" value="Post" class="btn btn-primary ms-3"></td>
+                    </tr>
+                </table>
+                
                 <input type="hidden" name="add_comment" value="1">
-                <input type="submit" value="Post">
+
+                <div class="d-flex justify-content-end mt-2">
+                </div>
             </form>
         </div>
     </div>
 
     <div class="d-flex flex-column align-items-center p-5" id="comment-section">
         <?php foreach ($comments as $comment): ?>
-            <div class="card" style="width: 25rem; margin-bottom: 1rem;"> 
+            <div class="card mb-2" style="width: 25rem;"> 
                 <h5 class="card-header"><?= $comment["user"] ?></h5>
                 <div class="card-body">
                     <?= $comment["comment"] ?>
