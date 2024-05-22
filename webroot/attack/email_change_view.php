@@ -11,10 +11,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand ml-5" href="./index.php">Home</a>
-        <a class="navbar-brand"  href="./profile.php">Profile</a>
-    </nav>
+    <?php include_once('./navbar.php'); ?>
 
     <div class="d-flex justify-content-center align-items-center flex-grow-1 h-100 mt-4" >
         <div class="card" style="width: 25rem;">
