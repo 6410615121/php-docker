@@ -11,10 +11,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand ml-5" href="./index.php">Home</a>
-        <a class="navbar-brand"  href="./profile.php">Profile</a>
-    </nav>
+    <?php include_once('./navbar.php'); ?>
     <div class="d-flex flex-column align-items-center">
         <h2>Hello welcome you are  <?=($_COOKIE["username"]) ?>!!</h2>
     
