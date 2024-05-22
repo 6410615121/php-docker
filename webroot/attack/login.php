@@ -4,8 +4,9 @@ if(isset($_GET['username'])){
     $username = $_GET['username'];
     $password = $_GET['password'];
     
-    if(login($username, $password)){
-        setcookie('username', $username);
+    $login = login($username, $password);
+    if($login){
+        setcookie('username', $login['username']);
         echo "<script>location.href='index.php';</script>";
         exit;
     }

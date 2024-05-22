@@ -154,8 +154,9 @@ function login($username, $password){
     global $link;
     $query = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
     $result = mysqli_query($link, $query);
-    if (mysqli_num_rows($result) != 0) {
-        return true; // Login successful
+    $user = mysqli_fetch_assoc($result);
+    if ($user) {
+        return $user; // Login successful
     } else {
         return false; // Login unsuccessful
     }
