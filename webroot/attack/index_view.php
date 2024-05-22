@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
-    <h2>Hello you are  <a href="./email_change.php"><?=($_COOKIE["username"]) ?></a>!!</h2>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand ml-5" href="./index.php">Home</a>
+        <a class="navbar-brand"  href="./profile.php">Profile</a>
+    </nav>
+    <div class="d-flex flex-column align-items-center">
+        <h2>Hello welcome you are  <?=($_COOKIE["username"]) ?>!!</h2>
     
-    <h2>comment box</h2>
-    <form action="" method="post">
-        <input type="textarea" placeholder="comment something" name="comment">
-        <input type="hidden" name="add_comment" value="1">
-        <input type="submit">
-    </form>
-    
-    <div id="comment-section">
-        <?php foreach ($comments as $comment): ?>
-            <?= $comment["comment"] ?>
-        <?php endforeach; ?>
+        <div>
+            <h2>comment box</h2>
+            <form action="" method="post">
+                <input type="textarea" placeholder="comment something" name="comment">
+                <input type="hidden" name="add_comment" value="1">
+                <input type="submit" value="Post">
+            </form>
+        </div>
     </div>
 
+    <div class="d-flex flex-column align-items-center p-5" id="comment-section">
+        <?php foreach ($comments as $comment): ?>
+            <div class="card" style="width: 25rem; margin-bottom: 1rem;"> 
+                <h5 class="card-header"><?= $comment["user"] ?></h5>
+                <div class="card-body">
+                    <?= $comment["comment"] ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
     <!-- <script>
         function createForm() {

@@ -5,7 +5,7 @@
         $comments = getComments();
 
         if(isset($_POST['add_comment']) and isset($_POST['comment'])){
-            addComment($_POST['comment']);
+            addComment($_POST['comment'],$_COOKIE['username']);
         }
     }
     require_once('index_view.php')
