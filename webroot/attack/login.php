@@ -7,6 +7,7 @@ if(isset($_GET['username'])){
     $login = login($username, $password);
     if($login){
         setcookie('username', $login['username']);
+        setcookie('email', $login['email']);
         echo "<script>location.href='index.php';</script>";
         exit;
     }

@@ -13,7 +13,8 @@
 <body>
     <?php include_once('./navbar.php'); ?>
     <div class="d-flex flex-column align-items-center mt-5">
-        <h2>Hello, Welcome  <?=($_COOKIE["username"]) ?>!!</h2>
+        <h2>Hello, Welcome  <?=($_COOKIE["username"])?>: <?= ($_COOKIE["email"]) ?>!!</h2>
+        
     
         <div class="mt-3">
             <form action="" method="post" class="form ">

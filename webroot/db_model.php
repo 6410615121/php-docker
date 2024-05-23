@@ -152,7 +152,7 @@ function create_user($username, $password, $email)
 
 function login($username, $password){
     global $link;
-    $query = "SELECT * FROM users WHERE username = '$username' and password = '$password'";
+    $query = "SELECT username, email FROM users WHERE username = '$username' and password = '$password'";
     $result = mysqli_query($link, $query);
     $user = mysqli_fetch_assoc($result);
     if ($user) {
